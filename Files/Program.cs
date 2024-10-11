@@ -28,7 +28,9 @@ namespace Files
 			while(!sr.EndOfStream)
 			{
 				string buffer = sr.ReadLine();
-				Console.WriteLine(buffer);
+				Console.WriteLine(buffer);				
+				
+				
 			}
 			sr.Close();
 #endif
