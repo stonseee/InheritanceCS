@@ -33,33 +33,39 @@ namespace Academy
 			Console.WriteLine(graduate);
 #endif
 			Human[] group = new Human[]
-			{
-				new Human("Montana", "Antoshka", 25),
+			{				
 				new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
-				new Graduate("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96, "How to using dope")				
+				new Graduate("Schreder", "Hank", 40, "Criminalystic", "DEA", 70, 40, "How to stop hair loss"),				
+				new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 97, 98),
+				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 			};
 
-			foreach (Human human in group)
-			{
-				Console.WriteLine(human);
-			}
+			//foreach (Human human in group)
+			//{
+			//	Console.WriteLine(human);
+			//}				
 
-			StreamWriter sw = new StreamWriter("File.txt");
-			foreach (Human human in group)
-			{			
-				sw.WriteLine(human);
+			Print(group);
+			Save(group, "group.txt");
+		}
+		static void Print(Human[] group)
+		{
+			for (int i = 0; i < group.Length; i++)
+			{
+				Console.WriteLine(group[i]);
 			}
-			sw.Close();			
-			Process.Start("notepad", "File.txt");			
-			
-			StreamReader sr = new StreamReader("File.txt");
-			while (!sr.EndOfStream)
-			{				
-				string buffer = sr.ReadLine();
-				Console.WriteLine(buffer);	
+			Console.WriteLine();
+		}
+		static void Save(Human[] group, string filename)
+		{
+			StreamWriter sw = new StreamWriter(filename);
+			for (int i = 0; i < group.Length; i++)
+			{
+				sw.WriteLine(group[i]);
 			}
-			sr.Close();
+			sw.Close();
+			Process.Start("notepad", filename);
 		}
 	}
 }
