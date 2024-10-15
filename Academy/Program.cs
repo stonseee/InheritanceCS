@@ -1,4 +1,6 @@
 ﻿//#define INHERITANCE_CHECK
+//#define SAVE_CHECK
+#define LOAD_CHECK
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
@@ -32,14 +34,15 @@ namespace Academy
 			//graduate.Print();
 			Console.WriteLine(graduate);
 #endif
+#if SAVE_CHECK
 			Human[] group = new Human[]
-			{				
+				{
 				new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 96),
 				new Teacher("White", "Walter", 50, "Chemistry", 25),
-				new Graduate("Schreder", "Hank", 40, "Criminalystic", "DEA", 70, 40, "How to stop hair loss"),				
+				new Graduate("Schreder", "Hank", 40, "Criminalystic", "DEA", 70, 40, "How to stop hair loss"),
 				new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 97, 98),
 				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
-			};
+				};
 
 			//foreach (Human human in group)
 			//{
@@ -47,7 +50,12 @@ namespace Academy
 			//}				
 
 			Streamer.Print(group);
-			Streamer.Save(group, "group.csv");
+			Streamer.Save(group, "group.csv"); 
+#endif
+#if LOAD_CHECK
+			Human[] group = Streamer.Load("group.csv");
+			Streamer.Print(group);
+#endif
 		}
 		
 	}
