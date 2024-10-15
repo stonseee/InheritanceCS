@@ -56,9 +56,10 @@ namespace Academy
 					values = values.Where(i => i != "").ToArray();
 					if(values.Length == 1)continue;
 					Console.WriteLine(buffer);
-					Human human = HumanFactory.Create(values[0]);
-					human.Init(values);
-					group.Add(human);
+					//Human human = HumanFactory.Create(values[0]);
+					//human.Init(values);
+					//group.Add(human);
+					group.Add(HumanFactory.Create(values[0]).Init(values));
 				}
 				sr.Close();
 			}
