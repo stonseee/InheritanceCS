@@ -24,8 +24,10 @@ namespace AbstractGeometry
 			
 			//Rectangle rectangle = new Rectangle(100, 50, 100, 200, 3, System.Drawing.Color.Red);
 			//rectangle.Info(e);
-			Square square = new Square(100, 100, 200, 3, System.Drawing.Color.Red);
-			square.Info(e);
+			//Square square = new Square(100, 100, 200, 3, System.Drawing.Color.Red);
+			//square.Info(e);
+			Circle circle = new Circle(100, 100, 200, 3, System.Drawing.Color.Red);
+			circle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetConsoleWindow();
