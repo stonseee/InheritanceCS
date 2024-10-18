@@ -38,7 +38,5 @@ namespace AbstractGeometry
 			Pen pen = new Pen(Color, LineWidth);
 			e.Graphics.DrawRectangle(pen, (int)StartX, (int)StartY, (int)Width, (int)Height);
 		}
-
-
 	}
 }
