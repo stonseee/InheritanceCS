@@ -22,8 +22,10 @@ namespace AbstractGeometry
 				);
 			PaintEventArgs e = new PaintEventArgs( graphics, window_rect );
 			
-			Rectangle rectangle = new Rectangle(100, 50, 100, 200, 3, System.Drawing.Color.Red);
-			rectangle.Info(e);
+			//Rectangle rectangle = new Rectangle(100, 50, 100, 200, 3, System.Drawing.Color.Red);
+			//rectangle.Info(e);
+			Square square = new Square(100, 100, 200, 3, System.Drawing.Color.Red);
+			square.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetConsoleWindow();
