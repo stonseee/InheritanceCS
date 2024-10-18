@@ -36,7 +36,9 @@ namespace AbstractGeometry
 		public override void Draw(PaintEventArgs e)
 		{
 			Pen pen = new Pen(Color, LineWidth);
-			e.Graphics.DrawPolygon(pen, new PointF[3] { new PointF((float)StartX, (float)(StartY + Height)), new PointF((float)(StartX + Width), (float)(StartY + Height)), new PointF((float)(StartX + (Width)/2), (float)StartY) });
+			e.Graphics.DrawPolygon(pen, new PointF[3] { new PointF((float)StartX, (float)(StartY + Height)), 
+				                                        new PointF((float)(StartX + Width), (float)(StartY + Height)), 
+				                                        new PointF((float)(StartX + (Width)/2), (float)StartY) });
 		}
 	}
 }
