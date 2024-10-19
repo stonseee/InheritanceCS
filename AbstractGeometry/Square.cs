@@ -8,27 +8,10 @@ using System.Windows.Forms;
 
 namespace AbstractGeometry
 {
-	internal class Square:Shape
+	internal class Square:Rectangle
 	{
-		double side;
-		public double Side
-		{
-			get => side;
-			set => side = SizeFilter(value);
-		}
-		public Square(
-			double side,
-			int startX, int startY, int lineWidth, System.Drawing.Color color
-			) : base(startX, startY, lineWidth, color)
-		{
-			Side = side;
-		}
-		public override double GetArea() => Side * Side;
-		public override double GetPerimeter() => 4 * Side;
-		public override void Draw(PaintEventArgs e)
-		{
-			Pen pen = new Pen(Color, LineWidth);
-			e.Graphics.DrawRectangle(pen, (int)StartX, (int)StartY, (int)Side, (int)Side);
-		}
+		public Square(double side, int startX, int startY, int lineWidth, Color color)
+			: base(side, side, startX, startY, lineWidth, color) { }
+
 	}
 }
