@@ -16,6 +16,7 @@ namespace AbstractGeometry
 			: base(startX, startY, lineWidth, color) { }
 		public override void Info(PaintEventArgs e)
 		{
+			Console.WriteLine(this.GetType());
 			Console.WriteLine($"Высота треугольника: {GetHeight()}");
 			base.Info(e);
 		}

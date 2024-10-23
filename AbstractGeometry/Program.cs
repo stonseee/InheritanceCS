@@ -21,7 +21,7 @@ namespace AbstractGeometry
 				Console.WindowWidth, Console.WindowHeight
 				);
 			PaintEventArgs e = new PaintEventArgs( graphics, window_rect );
-			
+
 			Rectangle rectangle = new Rectangle(100, 50, 700, 50, 3, System.Drawing.Color.Red);
 			rectangle.Info(e);
 			Square square = new Square(75, 900, 50, 1, System.Drawing.Color.DarkBlue);
@@ -34,6 +34,14 @@ namespace AbstractGeometry
 			EquilateralTriangle e_triangle = 
 				new EquilateralTriangle(50, 900, 300, 5, System.Drawing.Color.GreenYellow);
 			e_triangle.Info(e);
+
+			RightTriangle r_triangle =
+				new RightTriangle(100, 50, 900, 400, 5, System.Drawing.Color.Aqua);
+			r_triangle.Info(e);			
+
+			IsoscelesRightTriangle ir_triangle =
+				new IsoscelesRightTriangle(50, 900, 500, 5, System.Drawing.Color.Azure);
+			ir_triangle.Info(e);
 		}
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetConsoleWindow();
